@@ -35,8 +35,8 @@ export function MetaCodingChallengePage() {
   return (
     <>
       <Helmet>
-        <title>404 Page Not Found</title>
-        <meta name="description" content="Page not found" />
+        <title>Meta Coding challenge</title>
+        <meta name="description" content="Meta Coding challenge" />
       </Helmet>
       <div>
         <Controller>
