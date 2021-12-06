@@ -92,7 +92,7 @@ const BlueHeroSection = styled.div`
   display: flex;
   color: #005b94;
   align-items: flex-start;
-  padding: 0 2vw;
+  padding: 0px 0px 0px 2vw;
   justify-content: center;
   flex-direction: column;
   min-height: 320px;
@@ -105,7 +105,7 @@ const BlueTitleLarge = styled.div`
   margin-top: 1.5vh;
   font-weight: 500;
   color: ${p => BlueHeroSectionPrimary || p.theme.text};
-  font-size: calc(3rem + 4vw);
+  font-size: calc(2.5rem + 4vw);
   padding: 0 0.5rem;
 `;
 
