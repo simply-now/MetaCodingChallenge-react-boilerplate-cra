@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components/macro';
+import { ReactComponent as MetaLogo } from './assets/meta-logo.svg';
 
 export function Logo() {
   return (
     <Wrapper>
-      <Title>React Boilerplate</Title>
-      <Description>Create React App Template</Description>
+      <MetaLogo className="logo" />
     </Wrapper>
   );
 }
@@ -13,6 +13,11 @@ export function Logo() {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+
+  .logo {
+    height: 18px;
+    width: auto;
+  }
 `;
 
 const Title = styled.div`

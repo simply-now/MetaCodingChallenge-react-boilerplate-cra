@@ -14,6 +14,7 @@ import { GlobalStyle } from '../styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { MetaCodingChallengePage } from './pages/MetaCodingChallengePage/Loadable';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -29,7 +30,16 @@ export function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + '/homepage'}
+          component={HomePage}
+        />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + '/'}
+          component={MetaCodingChallengePage}
+        />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

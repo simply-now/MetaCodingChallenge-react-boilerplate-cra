@@ -10,7 +10,6 @@ export function NavBar() {
     <Wrapper>
       <PageWrapper>
         <Logo />
-        <Nav />
       </PageWrapper>
     </Wrapper>
   );
