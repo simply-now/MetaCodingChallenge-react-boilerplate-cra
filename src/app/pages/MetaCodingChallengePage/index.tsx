@@ -47,9 +47,9 @@ export function MetaCodingChallengePage() {
           <Scene
             duration={'100%'}
             offset={'0'}
-            classToggle="zap"
             triggerElement="#BlueSceneTrigger"
-            indicators={true}
+            triggerHook="onLeave"
+            indicators={false}
             pin
           >
             {duration => (
@@ -74,12 +74,12 @@ export function MetaCodingChallengePage() {
 const BlueHeroSectionPrimary = '#005b94';
 
 const TriggerWrapper = styled.div`
-  top: calc(125.5vh + ${StyleConstants.NAV_BAR_HEIGHT});
+  top: calc(100vh - ${StyleConstants.NAV_BAR_HEIGHT});
   position: absolute;
 `;
 
 const EmptyWrapper = styled.div`
-  height: calc(1057px - ${StyleConstants.NAV_BAR_HEIGHT});
+  height: calc(100vh - ${StyleConstants.NAV_BAR_HEIGHT});
   display: flex;
   align-items: center;
   justify-content: center;
