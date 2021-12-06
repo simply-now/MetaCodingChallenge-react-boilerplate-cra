@@ -21,7 +21,7 @@ const Wrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${p => p.theme.background};
+  background-color: ${p => p.theme.backgroundVariant};
   z-index: 2;
 
   @supports (backdrop-filter: blur(10px)) {
@@ -29,7 +29,7 @@ const Wrapper = styled.header`
     background-color: ${p =>
       p.theme.background.replace(
         /rgba?(\(\s*\d+\s*,\s*\d+\s*,\s*\d+)(?:\s*,.+?)?\)/,
-        'rgba$1,0.75)',
+        'rgba$1,1)',
       )};
   }
 
