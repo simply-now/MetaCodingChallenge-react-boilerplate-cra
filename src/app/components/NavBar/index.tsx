@@ -6,7 +6,7 @@ import { PageWrapper } from '../PageWrapper';
 
 export function NavBar() {
   return (
-    <Wrapper>
+    <Wrapper id="naveBarTrigger">
       <PageWrapper>
         <Logo />
       </PageWrapper>

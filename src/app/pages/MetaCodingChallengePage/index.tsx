@@ -1,28 +1,82 @@
 import * as React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components/macro';
 import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
+import { Controller, Scene } from 'react-scrollmagic';
+import { title } from 'process';
 
 export function MetaCodingChallengePage() {
+  const BlueTitleLargeText = [
+    {
+      id: 1,
+      title: 'Focus on impact',
+    },
+    {
+      id: 2,
+      title: 'Focus on impact',
+    },
+    {
+      id: 3,
+      title: 'Be open',
+    },
+    {
+      id: 4,
+      title: 'Be bold',
+    },
+    {
+      id: 4,
+      title: 'Build social value',
+    },
+  ];
+
+  const [BlueDurationStep, setBlueDurationStep] = useState(1);
+
   return (
     <>
       <Helmet>
         <title>404 Page Not Found</title>
         <meta name="description" content="Page not found" />
       </Helmet>
-      <NavBar />
-      <EmptyWrapper></EmptyWrapper>
-      <BlueHeroSection>
-        <BlueTitleSmall>CHANGING TEXT</BlueTitleSmall>
-        <BlueTitleLarge>Focus on impact</BlueTitleLarge>
-      </BlueHeroSection>
-      <EmptyWrapper></EmptyWrapper>
+      <div>
+        <Controller>
+          <NavBar />
+          <EmptyWrapper></EmptyWrapper>
+          <TriggerWrapper id="BlueSceneTrigger"></TriggerWrapper>
+          <Scene
+            duration={'100%'}
+            offset={'0'}
+            classToggle="zap"
+            triggerElement="#BlueSceneTrigger"
+            indicators={true}
+            pin
+          >
+            {duration => (
+              <BlueHeroSection>
+                <BlueTitleSmall>
+                  CHANGING TEXT
+                  {setBlueDurationStep(Math.ceil((duration * 100) / 25))}
+                </BlueTitleSmall>
+                <BlueTitleLarge>
+                  {BlueTitleLargeText[BlueDurationStep].title}
+                </BlueTitleLarge>
+              </BlueHeroSection>
+            )}
+          </Scene>
+          <EmptyWrapper></EmptyWrapper>
+        </Controller>
+      </div>
     </>
   );
 }
 
 const BlueHeroSectionPrimary = '#005b94';
+
+const TriggerWrapper = styled.div`
+  top: calc(125.5vh + ${StyleConstants.NAV_BAR_HEIGHT});
+  position: absolute;
+`;
 
 const EmptyWrapper = styled.div`
   height: calc(1057px - ${StyleConstants.NAV_BAR_HEIGHT});

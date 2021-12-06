@@ -47,7 +47,7 @@ const Sticky2Styled = styled.div`
   }
 `;
 
-export function NotFoundPage() {
+export function Sticky2() {
   return (
     <Sticky2Styled>
       <div className="section" />
@@ -56,18 +56,6 @@ export function NotFoundPage() {
           <Scene triggerHook="onLeave" duration={1000} pin>
             {progress => (
               <div className="sticky">
-                <Scene
-                  duration={2000}
-                  classToggle="zap"
-                  triggerElement="#trigger"
-                  indicators={true}
-                >
-                  {(progress, event) => (
-                    <div className="test">
-                      Pin Test {event.type} {progress}
-                    </div>
-                  )}
-                </Scene>
                 <Timeline totalProgress={progress} paused>
                   <Tween
                     from={{ x: '10%', top: '60%' }}
@@ -85,7 +73,7 @@ export function NotFoundPage() {
                   <Timeline
                     target={
                       <div className="heading">
-                        <h2>This is a cool heading {progress > 0.64}</h2>
+                        <h2>This is a cool heading</h2>
                       </div>
                     }
                   >
