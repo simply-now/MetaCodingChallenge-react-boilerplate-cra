@@ -5,7 +5,6 @@ import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
 import { Controller, Scene } from 'react-scrollmagic';
-import { title } from 'process';
 
 export function MetaCodingChallengePage() {
   const BlueTitleLargeText = [
@@ -106,18 +105,12 @@ const BlueTitleLarge = styled.div`
   margin-top: 1.5vh;
   font-weight: 500;
   color: ${p => BlueHeroSectionPrimary || p.theme.text};
-  font-size: 6rem;
+  font-size: calc(3rem + 4vw);
   padding: 0 0.5rem;
-  span {
-    font-size: 5.125rem;
-  }
 `;
 
 const BlueTitleSmall = styled.div`
   font-weight: normal;
   color: ${p => BlueHeroSectionPrimary || p.theme.text};
-  font-size: 1.5rem;
-  span {
-    font-size: 1.125rem;
-  }
+  font-size: calc(1rem + 1vw);
 `;
